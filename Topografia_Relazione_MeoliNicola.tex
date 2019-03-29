@@ -1,0 +1,39 @@
+\documentclass[a4paper]{report}
+\usepackage{geometry}\geometry{a4paper,top=1.5cm,bottom=2cm,left=1.5cm,right=1.5cm,heightrounded,bindingoffset=5mm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amsfonts,amssymb,braket}
+\usepackage{graphicx}
+%\usepackage{subfig} %sub-figures
+\usepackage{titlesec} % per formato custom dei titoli dei capitoli
+\title{Relazione di Topografia}
+\author{Nicola Meoli}
+\date{}
+\input{Commands}
+\begin{document}
+\maketitle
+\tableofcontents
+% redefinizione del formato del titolo del capitolo
+      % da formato
+      %   Capitolo X
+      %   Titolo capitolo
+      % a formato
+      %   X   Titolo capitolo 
+	\titleformat{\chapter}
+        {\normalfont\Huge\bfseries}{\thechapter}{1em}{}
+	\titlespacing*{\chapter}{0pt}{0.59in}{0.02in}
+	\titlespacing*{\section}{0pt}{0.20in}{0.02in}
+	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
+%---        
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+%-----bibliografy
+%\nocite{name} %uncomment with the right name
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}
