@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 %\usepackage{subfig} %sub-figures
 \usepackage{epsfig}
+\usepackage{plain}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
 \usepackage{csvsimple}
 \usepackage[output-decimal-marker={,}]{siunitx}
@@ -15,8 +16,10 @@
 
 \input{Commands}
 \begin{document}
+%\pagenumbering{gobble} 
 \input{titolo}
 \tableofcontents
+\thispagestyle{empty}
 % redefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
@@ -30,6 +33,7 @@
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 %---        
 \input{Chapters/Chapter1}
+\setcounter{page}{1}
 \input{Chapters/Chapter2}
 \input{Chapters/Chapter3}
 \input{Chapters/Chapter4}
