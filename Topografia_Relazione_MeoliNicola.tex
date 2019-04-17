@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{report}
-\usepackage{geometry}\geometry{a4paper,top=3cm,bottom=3cm,left=2cm,right=2cm,heightrounded,bindingoffset=0mm}
+\documentclass[a4paper,12pt]{report}
+\usepackage{geometry}\geometry{a4paper,top=3.5cm,bottom=3.5cm,left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
 %ocio al bindingoffset!
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -13,11 +13,9 @@
 \usepackage{csvsimple}
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{lipsum}
-
 \input{Commands}
 \begin{document}
-%\pagenumbering{gobble} 
-\input{titolo}
+\input{titolo}   
 \tableofcontents
 \thispagestyle{empty}
 % redefinizione del formato del titolo del capitolo
@@ -32,8 +30,8 @@
 	\titlespacing*{\section}{0pt}{0.20in}{0.02in}
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 %---        
+%il counter pagina 1 è all'interno del capitolo 1
 \input{Chapters/Chapter1}
-\setcounter{page}{1}
 \input{Chapters/Chapter2}
 \input{Chapters/Chapter3}
 \input{Chapters/Chapter4}
