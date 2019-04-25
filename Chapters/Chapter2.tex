@@ -1,12 +1,93 @@
-\chapter{Livellazione}
-\label{cap:cap2}
-Importazione del libretto di campagna\\
-%per ora no:
-%\csvautotabular{documents/topo.csv}
-\si{44551215543.4}{\meter\squared}
-\begin{equation}
-\begin{bmatrix}
-12 & 3 \\ 
-3 & 2
-\end{bmatrix}
-\end{equation}
+\chapter{Livellazione}\label{cap:cap2}
+Si riporta innanzitutto il libretto di campagna nella tabella  \ref{tab:libretto1}.
+\section{Primo libretto}
+%vedere se è davvero il gruppo 3 e BOH
+\begin{table}[htb]
+\caption{Libretto di campagna del gruppo 3}
+\label{tab:libretto1}
+\csvreader[centered tabular=|c c|c c|c c|c c|,
+	table head=\hline $L_{dx}$ & $L_{sx}$ & $L_{dx}$ %
+	& $L_{sx}$ & $L_{dx}$ & $L_{sx}$ & $L_{dx}$ & $L_{sx}$ \\\hline,
+	table foot = \hline]%
+	{documents/livLibretto1.csv}{}%
+	{\csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii}
+\end{table}
+\csvloop{
+	file=documents/livLibretto1rielaborato.csv,
+	no head,
+	before reading=\begin{table}[htb]
+	\centering
+	\sisetup{table-number-alignment=center}
+	\caption{Elaborazione del libretto di campagna assegnando peso 1 a tutte le misure}
+	\label{tab:libretto1rielbaborato},
+	tabular={|c@{}c|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|},
+	table head=\hline,	
+	command={&\csvcolix & \csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii},
+	table foot=\hline,
+	after reading=\end{table}
+}
+\csvloop{
+	file=documents/livLibretto1rielaboratoaggiustato.csv,
+	no head,
+	before reading=\begin{table}[htb]
+	\centering
+	\sisetup{table-number-alignment=center}
+	\caption{Rielaborazione dopo aver modificato i pesi delle misure}
+	\label{tab:libretto1rielbaboratoaggiustato},
+	tabular={|c@{}c|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|},
+	table head=\hline,	
+	command={&\csvcolix & \csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii},
+	table foot=\hline,
+	after reading=\end{table}
+}
+\section{Secondo libretto}
+\begin{table}[htb]
+\caption{Libretto di campagna del gruppo BOH}
+\label{tab:libretto2}
+\csvreader[centered tabular=|c c|c c|c c|c c|,
+	table head=\hline $L_{dx}$ & $L_{sx}$ & $L_{dx}$ %
+	& $L_{sx}$ & $L_{dx}$ & $L_{sx}$ & $L_{dx}$ & $L_{sx}$ \\\hline,
+	table foot = \hline]%
+	{documents/livLibretto2.csv}{}%
+	{\csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii}
+\end{table}
+\csvloop{
+	file=documents/livLibretto2rielaborato.csv,
+	no head,
+	before reading=\begin{table}[htb]
+	\centering
+	\sisetup{table-number-alignment=center}
+	\caption{Elaborazione del libretto di campagna assegnando peso 1 a tutte le misure}
+	\label{tab:libretto2rielbaborato},
+	tabular={|c@{}c|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|},
+	table head=\hline,	
+	command={&\csvcolix & \csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii},
+	table foot=\hline,
+	after reading=\end{table}
+}
+\csvloop{
+	file=documents/livLibretto2rielaboratoaggiustato.csv,
+	no head,
+	before reading=\begin{table}[htb]
+	\centering
+	\sisetup{table-number-alignment=center}
+	\caption{Rielaborazione dopo aver modificato i pesi delle misure}
+	\label{tab:libretto2rielbaboratoaggiustato},
+	tabular={|c@{}c|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|S[table-format=3.3]S[table-format=3.3]|},
+	table head=\hline,	
+	command={&\csvcolix & \csvcoli & \csvcolii & \csvcoliii & %
+	\csvcoliv & \csvcolv & \csvcolvi & %
+	\csvcolvii & \csvcolviii},
+	table foot=\hline,
+	after reading=\end{table}
+}
