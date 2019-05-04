@@ -38,7 +38,7 @@ Quelle eccessivamente discordanti verranno considerate errori grossolani e perci
 Infine si calcolerà la differenza delle letture reciproche e  l'errore di chiusura sommando tutti i dislivelli -- entrambi che dovrebbero risultar zero nel caso ottimale.
 \section{Elaborazione del rilievo del gruppo 3}
 Si riporta innanzitutto il libretto di campagna nella tabella \ref{tab:libretto1}.
-Tabella in cui ogni coppia di righe rappresenta le misure indietro e avanti di uno specifico punto e ogni colonne rappresenta la lettura nella scala destra e sinistra della stadia.
+Tabella in cui ogni coppia di righe rappresenta le misure indietro e avanti di uno specifico punto e ogni colonna rappresenta la lettura nella scala destra e sinistra della stadia.
 Ogni coppia di colonna è frutto della misura di un diverso operatore. 
 %-
 \libretto{Libretto di campagna del gruppo 3. Il terzo e quarto insieme di letture sono letture reciproche. Il resto sono letture dal mezzo}{tab:libretto1}{documents/livLibretto1.csv}
@@ -65,12 +65,29 @@ Una differenza delle letture reciproche uguale, o comunque non troppo lontana, d
 Come si nota nei risultati ottenuti, non solo è abbastanza lontana da zero ma oltretutto aumenta dopo la rielaborazione dei pesi. 
 Probabilmente causa del fatto dell'inesperienza degli operatori e di un errore diffuso un po' a tutte le misure.
 Discorso analogo per quanto riguarda l'errore di chiusura ma che comunque rappresenta pochi millimetri.
-
 %
 \clearpage %mette tutti i float fin qua definiti
-\section{Secondo libretto}
-\libretto{Libretto di campagna del gruppo 3}{tab:libretto2}{documents/livLibretto2.csv}
-\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutte le misure}{tab:libretto2rielaborato}{documents/livLibretto2rielaborato.csv}
-\elaborazione{Rielaborazione dopo aver modificato i pesi delle misure}{tab:libretto2rielaboratoaggiustato}{documents/livLibretto2rielaboratoaggiustato.csv}
+\section{Elaborazione del rilievo del gruppo 4}
+Lo stesso procedimento appena visto è stato applicato al rilievo fatto da un diverso gruppo. 
+Tutti i dati sono riportati con le stesse modalità di prima, perciò si indicheranno soltanto i pesi azzerati e gli errori prima e dopo la rielaborazione.
+\ref{tab:libretto2} le 
+\libretto{Libretto di campagna del gruppo 4. Il terzo e quarto insieme di letture sono letture reciproche. Il resto sono letture dal mezzo}{tab:libretto2}{documents/livLibretto2.csv}
+\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutti i dislivelli}{tab:libretto2rielaborato}{documents/livLibretto2rielaborato.csv}
+Ai dislivelli con peso iniziale $1$ della tabella \ref{tab:libretto2rielaborato} sono stati eliminati nel primo insieme i dislivelli $1$ e $2$ in prima battuta e dopo il ricalcolo anche il dislivello $3$. 
+Nel secondo insieme è stato azzerato il quarto dislivello.
+Per quanto riguarda i dislivelli del terzo insieme è stato eliminato prima il terzo e poi il secondo e l'ottavo.
+Nel quarto insieme prima il quinto e poi il sesto dislivello.
+Nell'ultimo insieme sono stati mantenuti tutti. 
+I dati finali sono riportati nella tabella \ref{tab:libretto2rielaboratoaggiustato} a pagina \pageref{tab:libretto2rielaboratoaggiustato}. 
+\elaborazione{Rielaborazione dopo aver modificato i pesi dei dislivelli}{tab:libretto2rielaboratoaggiustato}{documents/livLibretto2rielaboratoaggiustato.csv}
+
+I calcoli di controllo, rispettivamente prima e dopo la rielaborazione, sono: 
+\begin{align*}
+\Delta_{reciproche} &= \si{-0.225}{\centi\metre} \quad & chiusura = \si{1.676}{\centi\metre} \\
+\Delta_{reciproche} &= \si{0.313}{\centi\metre} \quad & chiusura = \si{0.077}{\centi\metre}
+\end{align*}
+Si nota come in questo caso si sia partiti da un errore di chiusura elevato a un errore pressoché accettabile.
+
+
 
 
