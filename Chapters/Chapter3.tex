@@ -1,1 +1,103 @@
 \chapter{Rototraslazione e variazione di scala}\label{cap:cap3}
+Una generica rototraslazione con annessa variazione di unità di misura tra due diversi sistemi di riferimento si effettua mediante:
+\begin{equation}
+	\label{eq:roto}
+	\underline{y}=\mu \mathbf{R} \underline{x}+\underline{t}
+\end{equation}
+in cui se le coordinate nei due sistemi di riferimento sono note e se si è nel caso bidimensionale, si possono calcolare i parametri $\mu$,$\alpha$,$t_{(1)}$ e $t_{(2)}$.
+Per farlo è opportuno linearizzare i parametri della matrice di rotazione $\mathbf{R}$ sostituendo ai suoi elementi i nuovi parametri $a=\mu\cos\alpha$ e $b=\mu\sin\alpha$:
+\[
+\mathbf{R}=
+\begin{bmatrix}
+\cos\alpha & -\sin\alpha \\ 
+\sin\alpha & \cos\alpha
+\end{bmatrix} 
+\quad \Longrightarrow \quad
+\mu \mathbf{R} = 
+\begin{bmatrix}
+a & -b \\ 
+b & a
+\end{bmatrix} 
+\]
+\e necessario poi minimizzare la funzione $\Phi$ definita come la somma del vettore degli scarti vettoriali trasposto per lo stesso non trasposto.
+\e così possibile così stimare i parametri $\hat{a}$ e $\hat{b}$ partendo dalle coordinate iniziali dei punti $k$ $\underline{x_k}$ e $\underline{y_k}$ nei diversi sistemi.
+Si calcolano dapprima le media del baricentro:
+\begin{align}
+\underline{x_B} &= \frac{1}{N}\sum_{k=1}^{N}\underline{x_k}\\
+\underline{y_B} &= \frac{1}{N}\sum_{k=1}^{N}\underline{y_k}
+\end{align}
+per poi calcolare le coordinate baricentriche come differenza tra le coordinate iniziali e la media del baricentro:
+\begin{align}
+\overline{\underline{x_k}} &= \underline{x_k} - \underline{x_B}\\
+\overline{\underline{y_k}} &= \underline{y_k} - \underline{y_B}
+\end{align}
+Ridefinendo il vettore $\underline{t}$ come $\underline{t_{0}}=\underline{t}-\underline{w}_{B}+\lambda \mathbf{R} \underline{u}_{B}$ è possibile riportarsi all'equazione \ref{eq:roto} in cui però compaiono le coordinate baricentriche.
+\begin{equation}
+\underline{y_{k}}=
+\begin{bmatrix}
+	{a} & {-b} \\ 
+	{b} & {a}
+\end{bmatrix} 
+\overline{x_{k}}+\underline{t_{0}}
+\end{equation}
+che in forma espansa diventa:
+\begin{equation}
+	\begin{bmatrix}
+		\underline{y}_{k(1)} \\ 
+		\underline{y}_{k(2)}
+	\end{bmatrix} 
+	=
+	\begin{bmatrix}
+		{a} & {-b} \\ 
+		{b} & {a}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\underline{x}_{k(1)} \\ 
+		\underline{x}_{k(2)}
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+		\underline{t}_{(1)} \\ 
+		\underline{t}_{(2)}
+	\end{bmatrix}
+\end{equation}
+Chiamando il vettore dei termini noti con $\underline{\eta}$, quello dei termini incogniti con $\underline{\xi}$ e con $\mathbf{A}$ la matrice dei coefficienti, si ha:
+\begin{equation}
+	\underline{\eta}=\mathbf{A} \underline{\xi}
+\end{equation}
+Si tratta di un sistema facilmente risolvibile se si considerano le coordinate $x$ note senza errori e le coordinate $y$ con pari varianza e non correlate tra loro. 
+\begin{equation}
+	\hat{\underline{\xi}}=	
+	\left(\mathbf{A}^T \mathbf{A}\right)^{-1}
+	\left(\mathbf{A}^T \underline{\eta}\right)
+\end{equation}
+Permette così di trovare i parametri $d$, $p$, $q$, $a$ e $b$:
+\begin{align} d &=\sum_{k=1}^{N}\left(\overline{x}_{k(1)}^{2}+\overline{x}_{k(2)}^{2}\right) \\ 
+p &=\sum_{k=1}^{N}\left(\overline{x}_{k(1)} \overline{y}_{k(1)}+\overline{x}_{k(2)} \overline{y}_{k(2)}\right) \\ 
+q &=\sum_{k=1}^{N}\left(\overline{x}_{k(1)} \overline{y}_{k(2)}-\overline{x}_{k(2)} \overline{y}_{k(1)}\right) \\
+\hat{a} &= \frac{p}{d} \\
+\hat{b} &= \frac{q}{d}
+\end{align}
+Grazie ai quali è possibile calcolare le stime $\hat{\mu}$, $\hat{\alpha}$ e il vettore degli scarti $\underline{v}$.
+Quest'ultimo ottenuto minimizzando la funzione:
+\begin{equation}
+	\Phi = \sum_k \underline{v}^T\underline{v}_k
+\end{equation}
+\begin{align}
+	\hat{\mu} &= \sqrt{\hat{a}^2 + \hat{b}^2}\\
+	\hat{\alpha} &= \arctan\frac{\hat{b}}{\hat{a}}\\
+	\underline{v_k} &= 
+	\overline{\underline{y_{k}}}-
+\begin{bmatrix}
+	\hat{a} & \hat{-b} \\ 
+	\hat{b} & \hat{a}
+\end{bmatrix} 
+\overline{x_{k}}
+\end{align}
+\section{Esempio applicativo}
+Applicando questo metodo al seguente esercizio si ottengono i seguenti parametri:
+
+	
+%\vec: freccia (fisica)
+%\boldsymbol: corsivo matematico
+%\mathbf: tondo nero
