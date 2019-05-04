@@ -1,6 +1,6 @@
 \chapter{Livellazione}\label{cap:cap2}
 %LIBRETTO: comando per importare i libretti dal csv
-\newcommand{\libretto}[3]{
+\newcommand{\libretto}[3]{%
 \begin{table}[htb]\footnotesize
 \caption{#1}
 \label{#2}
@@ -16,7 +16,7 @@
 \end{table}}
 %ELABORAZIONE: comando per importare le rielaborazione dei libretti
 %1: caption, 2: label, 3: percorso file
-\newcommand{\elaborazione}[3]{
+\newcommand{\elaborazione}[3]{%
 \begin{table}[htb]\footnotesize
 \caption{#1}
 \label{#2}
@@ -32,11 +32,40 @@
 	\csvcolvii & \csvcolviii}
 \end{table}}
 %----------------------------------------
-Si riporta innanzitutto il libretto di campagna nella tabella  \ref{tab:libretto1}.
-\section{Primo libretto}
-\libretto{Libretto di campagna del gruppo 3}{tab:libretto1}{documents/livLibretto1.csv}
-\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutte le misure}{tab:libretto1rielaborato}{documents/livLibretto1rielaborato.csv}
-\elaborazione{Rielaborazione dopo aver modificato i pesi delle misure}{tab:libretto1rielaboratoaggiustato}{documents/livLibretto1rielaboratoaggiustato.csv}
+Si elaborano ora i dati raccolti durante il rilievo con il livello di due diversi gruppi. Date le diverse misure ripetute dovute alla lettura da parte diversi operatori dello stesso punto, è necessario analizzare la qualità delle misure. 
+Per farlo si calcoleranno medie e varianze al fine di conoscere la dispersione delle misure. 
+Quelle eccessivamente discordanti verranno considerate errori grossolani e perciò eliminate. 
+Infine si calcolerà la differenza delle letture reciproche e  l'errore di chiusura sommando tutti i dislivelli -- entrambi che dovrebbero risultar zero nel caso ottimale.
+\section{Elaborazione del rilievo del gruppo 3}
+Si riporta innanzitutto il libretto di campagna nella tabella \ref{tab:libretto1}.
+Tabella in cui ogni coppia di righe rappresenta le misure indietro e avanti di uno specifico punto e ogni colonne rappresenta la lettura nella scala destra e sinistra della stadia.
+Ogni coppia di colonna è frutto della misura di un diverso operatore. 
+%-
+\libretto{Libretto di campagna del gruppo 3. Il terzo e quarto insieme di letture sono letture reciproche. Il resto sono letture dal mezzo}{tab:libretto1}{documents/livLibretto1.csv}
+%-
+
+Come prima cosa si sono calcolati i dislivelli con la differenza di letture $\Delta_{ij}^{k}=\break l_{indietro}-l_{avanti}$. %break perché altrimenti la spezzava dopo il meno
+Si sono così venuti a creare dei dati ridondati di dislivelli per ogni coppia di punti.
+Per ogni insieme di dislivelli si è calcolata la media con la quale si è poi calcolata la dispersione di ciascuno di essi.
+Come prima battuta si è assegnato un peso pari a $1$ a tutti i dislivelli, come si può vedere nella tabella \ref{tab:libretto1rielaborato} riportata a pagina \pageref{tab:libretto1rielaborato}.
+\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutti i dislivelli}{tab:libretto1rielaborato}{documents/livLibretto1rielaborato.csv} %
+Mentre per i dislivelli con uno scarto troppo eccessivo si è poi modificato il peso portandolo a $0$ così da eliminarlo nel conteggio e ricalcolare poi media e scarti fin tanto che si ottenesse un valore accettabile come quelli riportati nella tabella \ref{tab:libretto1rielaboratoaggiustato} a pagina \pageref{tab:libretto1rielaboratoaggiustato}.
+\elaborazione{Rielaborazione dopo aver modificato i pesi dei dislivelli}{tab:libretto1rielaboratoaggiustato}{documents/livLibretto1rielaboratoaggiustato.csv}
+
+Nel primo insieme di dislivello è stato ad esempio prima annullato il dislivello $1$ e $5$ e a seguito del ricalcolo della media e degli scarti è stato eliminato anche il dislivello $2$.
+Nel secondo insieme sono stati tolti i dislivelli $5$ e $6$, nel quarto insieme soltanto il primo. 
+Nel secondo e quinto insieme sono invece stati mantenuti tutti i dislivelli.
+
+Si riportano ora la differenza delle medie delle letture reciproche e la chiusura finale data dalla somma delle medie dei dislivelli. Rispettivamente prima e dopo la rielaborazione con peso modificato:
+\begin{align*}
+\Delta_{reciproche} &= \si{0.086}{\centi\metre} \quad & chiusura = \si{0.081}{\centi\metre} \\
+\Delta_{reciproche} &= \si{-0.242}{\centi\metre} \quad & chiusura = \si{0.076}{\centi\metre}
+\end{align*}.
+Una differenza delle letture reciproche uguale, o comunque non troppo lontana, da zero è indice della corretta rettificazione del livello utilizzato. 
+Come si nota nei risultati ottenuti, non solo è abbastanza lontana da zero ma oltretutto aumenta dopo la rielaborazione dei pesi. 
+Probabilmente causa del fatto dell'inesperienza degli operatori e di un errore diffuso un po' a tutte le misure.
+Discorso analogo per quanto riguarda l'errore di chiusura ma che comunque rappresenta pochi millimetri.
+
 %
 \clearpage %mette tutti i float fin qua definiti
 \section{Secondo libretto}
