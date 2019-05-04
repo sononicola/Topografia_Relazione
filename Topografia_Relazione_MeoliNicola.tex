@@ -15,10 +15,13 @@
 \usepackage{tabularx,float,booktabs}
 \usepackage{verbatim}%per begin comment
 \usepackage{longtable}
-\usepackage{datatool} %csv
+%\usepackage{datatool} %csv
+%serve per la didascalia di tabelle e figure:
+\usepackage{caption}
+\captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}} %didascalie a più righe allineate e il nome in grassetto
 \input{Commands}
 \begin{document}
-\input{titolo}   
+%\input{titolo}   
 \tableofcontents
 \thispagestyle{empty}
 % redefinizione del formato del titolo del capitolo
@@ -34,11 +37,11 @@
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 %---        
 %il counter pagina 1 è all'interno del capitolo 1
-\input{Chapters/Chapter1}
+%\input{Chapters/Chapter1}
 \input{Chapters/Chapter2}
-\input{Chapters/Chapter3}
-\input{Chapters/Chapter4}
-\input{Chapters/Chapter5}
+%\input{Chapters/Chapter3}
+%\input{Chapters/Chapter4}
+%\input{Chapters/Chapter5}
 %-----bibliografy
 %\nocite{name} %uncomment with the right name
 %\bibliographystyle{plain}
