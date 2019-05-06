@@ -17,7 +17,7 @@
 %ELABORAZIONE: comando per importare le rielaborazione dei libretti
 %1: caption, 2: label, 3: percorso file
 \newcommand{\elaborazione}[3]{%
-\begin{table}[htb]\footnotesize
+\begin{table}[htbp]\footnotesize
 \caption{#1}
 \label{#2}
 \centering
@@ -48,9 +48,9 @@ Come prima cosa si sono calcolati i dislivelli con la differenza di letture $\De
 Si sono così venuti a creare dei dati ridondati di dislivelli per ogni coppia di punti.
 Per ogni insieme di dislivelli si è calcolata la media con la quale si è poi calcolata la dispersione di ciascuno di essi.
 Come prima battuta si è assegnato un peso pari a $1$ a tutti i dislivelli, come si può vedere nella tabella \ref{tab:libretto1rielaborato} riportata a pagina \pageref{tab:libretto1rielaborato}.
-\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutti i dislivelli}{tab:libretto1rielaborato}{documents/livLibretto1rielaborato.csv} %
+\elaborazione{Elaborazione del libretto di campagna del gruppo 3 assegnando peso 1 a tutti i dislivelli}{tab:libretto1rielaborato}{documents/livLibretto1rielaborato.csv} %
 Mentre per i dislivelli con uno scarto troppo eccessivo si è poi modificato il peso portandolo a zero così da eliminarlo nel conteggio e ricalcolare poi media e scarti fin tanto che si ottenesse un valore accettabile come quelli riportati nella tabella \ref{tab:libretto1rielaboratoaggiustato} a pagina \pageref{tab:libretto1rielaboratoaggiustato}.
-\elaborazione{Rielaborazione dopo aver modificato i pesi dei dislivelli}{tab:libretto1rielaboratoaggiustato}{documents/livLibretto1rielaboratoaggiustato.csv}
+\elaborazione{Rielaborazione del libretto di campagna del gruppo 3 dopo aver modificato i pesi dei dislivelli}{tab:libretto1rielaboratoaggiustato}{documents/livLibretto1rielaboratoaggiustato.csv}
 
 Nel primo insieme di dislivello è stato ad esempio prima annullato il dislivello $1$ e $5$ e poi a seguito del ricalcolo della media e degli scarti è stato eliminato anche il dislivello $2$.
 Nel secondo insieme sono stati tolti i dislivelli $5$ e $6$, nel quarto insieme soltanto il primo. 
@@ -66,12 +66,12 @@ Come si nota nei risultati ottenuti, non solo è abbastanza lontana da zero ma o
 Probabilmente causa del fatto dell'inesperienza degli operatori e di un errore diffuso un po' a tutte le misure.
 Discorso analogo per quanto riguarda l'errore di chiusura ma che comunque rappresenta pochi millimetri e perciò accettabile.
 %
-\clearpage %mette tutti i float fin qua definiti
+%\clearpage %mette tutti i float fin qua definiti
 \section{Elaborazione del rilievo del gruppo 4}
 Lo stesso procedimento appena visto è stato applicato al rilievo fatto da un diverso gruppo. 
 Tutti i dati sono riportati con le stesse modalità di prima, perciò si indicheranno soltanto i pesi azzerati e gli errori prima e dopo la rielaborazione. 
 \libretto{Libretto di campagna del gruppo 4. Il terzo e quarto insieme di letture sono letture reciproche. Il resto sono letture dal mezzo}{tab:libretto2}{documents/livLibretto2.csv}
-\elaborazione{Elaborazione del libretto di campagna assegnando peso 1 a tutti i dislivelli}{tab:libretto2rielaborato}{documents/livLibretto2rielaborato.csv}
+\elaborazione{Elaborazione del libretto di campagna del gruppo 4 assegnando peso 1 a tutti i dislivelli}{tab:libretto2rielaborato}{documents/livLibretto2rielaborato.csv}
 
 Ai dislivelli con peso iniziale $1$ della tabella \ref{tab:libretto2rielaborato} sono stati eliminati nel primo insieme i dislivelli $1$ e $2$ in prima battuta e dopo il ricalcolo anche il dislivello $3$. 
 Nel secondo insieme è stato azzerato il quarto dislivello.
@@ -79,7 +79,7 @@ Per quanto riguarda i dislivelli del terzo insieme è stato eliminato prima il t
 Nel quarto insieme prima il quinto e poi il sesto dislivello.
 Nell'ultimo insieme sono stati mantenuti tutti. 
 I dati finali sono riportati nella tabella \ref{tab:libretto2rielaboratoaggiustato} a pagina \pageref{tab:libretto2rielaboratoaggiustato}. 
-\elaborazione{Rielaborazione dopo aver modificato i pesi dei dislivelli}{tab:libretto2rielaboratoaggiustato}{documents/livLibretto2rielaboratoaggiustato.csv}
+\elaborazione{Rielaborazione del libretto di campagna del gruppo 4 dopo aver modificato i pesi dei dislivelli}{tab:libretto2rielaboratoaggiustato}{documents/livLibretto2rielaboratoaggiustato.csv}
 
 I calcoli di controllo, rispettivamente prima e dopo la rielaborazione, sono: 
 \begin{align*}
