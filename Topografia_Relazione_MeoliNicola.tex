@@ -11,7 +11,7 @@
 \usepackage{plain}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
 \usepackage{csvsimple}
-\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage[output-decimal-marker={,},separate-uncertainty = true,multi-part-units=single]{siunitx}
 \usepackage{tabularx,float,booktabs}
 \usepackage{verbatim}%per begin comment
 \usepackage{longtable}
@@ -21,9 +21,12 @@
 \captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}} %didascalie a più righe allineate e il nome in grassetto
 %non viene allineato a sinistra se la didascalia è corta una sola riga. PERCHé??
 \usepackage{xcolor}
+%serve per mettere il codice con lo sfondo grigio chiaro (cap 4)
+\usepackage{listings} 
+\lstset{backgroundcolor=\color{lightgray},boxpos=c,lineskip=3pt}
 \input{Commands}
 \begin{document}
-\input{titolo}   
+%\input{titolo}   
 \tableofcontents
 \thispagestyle{empty}
 % redefinizione del formato del titolo del capitolo
