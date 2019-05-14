@@ -29,6 +29,23 @@ AAAA , BBBB , K , misura
 \end{lstlisting}
 In cui con $I$ si intende il parametro per indicare i gradi di libertà di quel punto, con $J$ l'indice per indicare se è accettata quella misura ($0 = $ OK) e con $K$ la tipologia di misura: distanza nel nostro caso.
 \section{Compensazione del rilievo del gruppo 1}
+%Tabella dati iniziali gruppo1
+\begin{table}[htb]\footnotesize
+\caption{Dati di partenza ottenuti dal libretto di campagna del gruppo 1 e da cui si sono fatti i controlli di compatibilità}
+\label{tab:DatiInit1}
+\centering
+\csvreader[centered tabular=c@{}ccSSSSS,
+	no head, %nel csv non c'è la riga iniziale come nei libretti
+	table head=\toprule & {P. stazione} & {P. collimato} & {Dist.} & {Dir. azimutale} %
+	& {Angolo zenitale} & {Alt. prisma} & {Alt. teodolite}  \\\midrule,
+	table foot = \bottomrule]%
+	{documents/TriangoloCivile2019gruppo1.csv}{}%
+	{& \csvcoli & \csvcolii & \csvcoliv & \csvcolv & \csvcolvi &	\csvcolvii &\csvcolviii}
+\end{table}
+
+
+
+
 EXcel\\
 Viene ora affrontata la compensazione vera e propria eseguita con il programma Calge.
 Per ottenere le coordinate di partenza da cui far partire il processo di iterazione di Calge, si è assegnata al punto $3000$ l'origine degli assi e si è posto l'orientamento dell'asse $x$ verso il punto $1000$, e assegnato con ascissa pari a $36$. Per le quote si è tenuto conto di un dislivello medio di 4 metri.
@@ -72,6 +89,19 @@ $\mathbf{3000}$ &  0.000000  &  0.000000  & 0.000000 \\
 \end{center}
 %
 \section{Compensazione del rilievo del gruppo 3}
+%Tabella dati iniziali gruppo 3
+\begin{table}[htb]\footnotesize
+\caption{Dati di partenza ottenuti dal libretto di campagna del gruppo 3 e da cui si sono fatti i controlli di compatibilità}
+\label{tab:DatiInit3}
+\centering
+\csvreader[centered tabular=c@{}ccSSSSS,
+	no head, %nel csv non c'è la riga iniziale come nei libretti
+	table head=\toprule & {P. stazione} & {P. collimato} & {Dist.} & {Dir. azimutale} %
+	& {Angolo zenitale} & {Alt. prisma} & {Alt. teodolite}  \\\midrule,
+	table foot = \bottomrule]%
+	{documents/TriangoloCivile2019gruppo3.csv}{}%
+	{& \csvcoli & \csvcolii & \csvcoliv & \csvcolv & \csvcolvi &	\csvcolvii &\csvcolviii}
+\end{table}
 Si riporta ora la compensazione con Calge
 \begin{lstlisting}
 1000, 4,	36,	0,  	4
