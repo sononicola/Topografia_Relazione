@@ -7,40 +7,122 @@ E infine che la somma dei dislivelli risultasse zero.
 
 Nel caso di misure palesemente con errori grossolani "a vista" le si è eliminate.
 Con le restanti, invece, si è eseguita una compensazione con il programma Calge, confrontando le varianze ed eliminando le misure inadeguate, al fine le coordinate dei punti del triangolo. 
-\begin{align*}
+\begin{align}
 	\sum \alpha^{int.} &\cong \si{200}{^g}\\
 	c^{mis.} &\cong c^{calc.} = \sqrt{a^2 + b^2 - 2ab\cos(\gamma)} \\
 	\sum \Delta_i &\cong 0
-\end{align*}
+\end{align}
 
 Si riporta di seguito la procedura appena descritta per i dati raccolti dal gruppo 1 e dal gruppo 3 delle esercitazioni. Si riporterà poi un esempio di compensazione eseguito conoscendo le distanze.
-\section{Compensazione del rilievo del gruppo 1}
 
-\begin{footnotesize}\centering
+Obiettivo della compensazione è quello di riuscire ad ottenere risultati adeguati togliendo le misure ripetute che si rilevano troppo discostanti dalle medie, senza però ottenere valori di $\sigma_0$ inferiori all'unità, in quanto poi i risultati finali perderebbero di significato. 
+
+L'ordine di lettura degli input esposti qui di seguito consistono per le prime due comppensazioni in:
 \begin{lstlisting}
-1000, I, 35.770 , 0, -6.076
-2000, I , 20, 30, -4.888
-3000, I, 0, 0, 0
+AAAA , I , X , Y , Z  
+......
+AAAA , BBBB , J , dist , direz_azim , angolo_zenitale , H_strum_BBBB , H_strum_AAAA
+\end{lstlisting}
+mentre per l'ultima compensazione in:
+\begin{lstlisting}
+AAAA , BBBB , K , misura
+\end{lstlisting}
+In cui con $I$ si intende il parametro per indicare i gradi di libertà di quel punto, con $J$ l'indice per indicare se è accettata quella misura ($0 = $ OK) e con $K$ la tipologia di misura: distanza nel nostro caso.
+\section{Compensazione del rilievo del gruppo 1}
+EXcel\\
+Viene ora affrontata la compensazione vera e propria eseguita con il programma Calge.
+Per ottenere le coordinate di partenza da cui far partire il processo di iterazione di Calge, si è assegnata al punto $3000$ l'origine degli assi e si è posto l'orientamento dell'asse $x$ verso il punto $1000$, e assegnato con ascissa pari a $36$. Per le quote si è tenuto conto di un dislivello medio di 4 metri.
+All'inizio si sono utilizzate tutte le misure effettuate, che possono essere lette nell'input del programma qui di seguito. 
+\begin{lstlisting}
+1000, 4, 	36, 		0, 	4
+2000, 0 , 	20,	 	30,	4
+3000, 1, 	0, 		0, 	0
 $$$$, 0,0,0,0
-1000,2000,0,32.859,     392.93545,	102.3237,	1.522,	1.516
-1000,3000,0,36.28,      321.55055,	110.56335,	1.600,	1.516
-2000,1000,0,32.856,     189.2002,	97.44795,	1.600,	1.522
-2000,1000,0,32.856,     189.2017,	97.4526,	1.600,	1.522
-2000,3000,0,36.896,     257.8463,	108.5599,	1.467,	1.522
-2000,3000,0,36.896,	257.8481,	108.554,	1.467,	1.522
-3000,1000,0,36.315,	224.8441,	88.96775,	1.600,	1.467
-3000,2000,0,36.896,	164.876,	91.4474,	1.522,	1.467
+1000,2000,0,32.859,     392.93545,  102.3237,   1.522,  1.516
+1000,3000,0,36.28,      321.55055,  110.56335,  1.600,  1.516
+2000,1000,0,32.856,     189.2002,   97.44795,   1.600,  1.522
+2000,1000,0,32.856,     189.2017,   97.4526,    1.600,  1.522
+2000,3000,0,36.896,     257.8463,   108.5599,   1.467,  1.522
+2000,3000,0,36.896, 	257.8481,   108.554,    1.467,  1.522
+3000,1000,0,36.315, 	224.8441,   88.96775,   1.600,  1.467
+3000,2000,0,36.896, 	164.876,    91.4474,    1.522,  1.467
 xxxx,xxxx,0,0,0,0,0,0
 GRUPPO UNO
 \end{lstlisting}
-\end{footnotesize}
+Il quale porta ad un risultato che presenta un residuo troppo elevato nell'angolo zenitale della misura a riga 6.
+Si è perciò eliminata tale misura portando ad avere un nuovo residuo nella riga 5 e che ha un $\sigma_0^2$ pari a \si{1.7233}{}.
+Si è eliminata anche tale riga, rifacendo il calcolo. 
+\e però stato scartato questo nuovo input perché $\sigma_0^2$ è diventata pari a \si{0.1568}{}.
+
+Si è quindi tenuto come risultato finale quello in cui si è eliminata soltanto riga 6 e che porta alle seguenti coordinate dei punti:
 %Coordinate gruppo 1
-\begin{align*}
-	\mathbf{1000}&\quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{}\\
-	\mathbf{2000}&\quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{}\\
-	\mathbf{3000}&\quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{} \quad \si{0.000 \pm 0.001}{}
-\end{align*}
-
-
+\begin{center}
+\begin{tabular}%
+		{c%
+		S[table-format=2.6]%
+		S[table-format=2.6]%
+		S[table-format=2.6]}
+\toprule
+& {$\mathbf{x}$} & {$\mathbf{y}$} & {$\mathbf{z}$}   \\ \midrule
+$\mathbf{1000}$ & 35.771665  &  0.000000 &  6.120490 \\
+$\mathbf{2000}$ & 21.505886  & 29.570282 &  4.890624 \\
+$\mathbf{3000}$ &  0.000000  &  0.000000  & 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+%
 \section{Compensazione del rilievo del gruppo 3}
+Si riporta ora la compensazione con Calge
+\begin{lstlisting}
+1000, 4,	36,	0,  	4
+2000, 0 ,	20, 	30, 	4
+3000, 1, 	0, 	0,   	0
+$$$$, 0,0,0,0
+1000,2000,0,33.235,	194.6851,	102.32575,	1.408,	1.399
+1000,3000,0,36.047,	123.89465,	110.4399,	1.600,	1.399
+2000,1000,0,33.243,	26.779,		97.2715,	1.602,	1.408
+2000,1000,0,33.244,	26.78865,	97.27255,	1.602,	1.408
+2000,3000,0,36.684,	94.83175,	108.4262,	1.441,	1.408
+2000,3000,0,36.684,	94.8322,	108.42515,	1.441,	1.408
+3000,1000,0,36.097,	330.8344,	88.8924,	1.602,	1.441
+3000,2000,0,36.684,	269.7198,	91.57075,	1.408,	1.441
+xxxx,xxxx,0,0,0,0,0,0
+GRUPPO TRE
+\end{lstlisting}
+Utilizzando il qui sopra esposto libretto si ottiene un residuo elevato nella seconda misura. 
+Si è perciò eliminata la riga 6 portando ad un $\sigma_0^2$ pari a \si{2.1511}{}.
+Facendo varie prove si è notato che eliminando altre righe comportava ad avere $\sigma_0^2$ troppo bassi, pertanto si è mantenuto il risultato ottenuto avendo tolto solo la seconda misura (riga 6 dell'input)
+
+In questo caso si sono ottenuti valori di varianze più elevate rispetto al gruppo 1 e soprattutto non errori non attribuibili ad una specifica misura.
+Tale considerazione la si può vedere confrontando i valori delle singole coordinate. 
+
+Si ottengono pertanto le seguenti coordinate dei punti:
+%Coordinate gruppo 1
+\begin{center}
+\begin{tabular}%
+		{c%
+		S[table-format=2.6]%
+		S[table-format=2.6]%
+		S[table-format=2.6]}
+\toprule
+& {$\mathbf{x}$} & {$\mathbf{y}$} & {$\mathbf{z}$}   \\ \midrule
+$\mathbf{1000}$ & 35.544380 & 0.000000 & 6.106777 \\
+$\mathbf{2000}$ & 20.855675 &29.788713 & 4.876273 \\
+$\mathbf{3000}$ &  0.000000 & 0.000000 & 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%
+
 \section{Esempio in aula}
+\begin{lstlisting}
+1000, 1, 	1.2, 		0,0
+2000, 1 , 	0,	 	0,0
+3000, 0, 	0, 		0,0
+$$$$, 0,	0,	0,0
+1000, 3000,	0,	1.0220290
+2000,3000,	0,	1.0102192
+xxxx,xxxx,	0,	0
+TRIANGOLO
+\end{lstlisting}
