@@ -1,6 +1,21 @@
-\chapter{Compensazione con CALGE}
-\section{Esempio in aula}
+\chapter{Compatibilità e compensazione}
+Con i dati raccolti durante le esercitazioni con stazione totale svolte dai vari gruppi, si è proceduto ad eseguire dei controlli di compatibilità tra alcune grandezze plano-altimetriche.
+In particolare si sono calcolati i valori mediati delle misure ripetute, controllate le chiusure planimetriche degli angoli e delle distanze e le chiusure altimetriche dei dislivelli.
+Si è perciò controllato che la somma degli angoli interni formasse un angolo piatto. 
+Che i lati opposti del triangoli rispettassero il teorema dei Carnot, confrontando lato calcolato con il lato misurato. 
+E infine che la somma dei dislivelli risultasse zero.
+
+Nel caso di misure palesemente con errori grossolani "a vista" le si è eliminate.
+Con le restanti, invece, si è eseguita una compensazione con il programma Calge, confrontando le varianze ed eliminando le misure inadeguate, al fine le coordinate dei punti del triangolo. 
+\begin{align*}
+	\sum \alpha^{int.} &\cong \si{200}{^g}\\
+	c^{mis.} &\cong c^{calc.} = \sqrt{a^2 + b^2 - 2ab\cos(\gamma)} \\
+	\sum \Delta_i &\cong 0
+\end{align*}
+
+Si riporta di seguito la procedura appena descritta per i dati raccolti dal gruppo 1 e dal gruppo 3 delle esercitazioni. Si riporterà poi un esempio di compensazione eseguito conoscendo le distanze.
 \section{Compensazione del rilievo del gruppo 1}
+
 \begin{footnotesize}\centering
 \begin{lstlisting}
 1000, I, 35.770 , 0, -6.076
@@ -28,3 +43,4 @@ GRUPPO UNO
 
 
 \section{Compensazione del rilievo del gruppo 3}
+\section{Esempio in aula}
