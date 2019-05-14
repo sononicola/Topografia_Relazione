@@ -24,9 +24,16 @@
 %serve per mettere il codice con lo sfondo grigio chiaro (cap 4)
 \usepackage{listings} 
 \lstset{backgroundcolor=\color{lightgray},boxpos=c,lineskip=3pt}
+\usepackage[ %licenza
+type={CC},
+modifier={by-nc-sa},
+version={4.0},
+]{doclicense}
+\usepackage{hyperref} %link nelle parole
 \input{Commands}
 \begin{document}
-%\input{titolo}   
+\input{License}
+\input{titolo}   
 \tableofcontents
 \thispagestyle{empty}
 % redefinizione del formato del titolo del capitolo
