@@ -1,4 +1,5 @@
 \chapter{Descrizione del lavoro svolto}
+\label{cap:cap1}
 \setcounter{page}{1}
 Le esercitazioni strumentali si sono svolte in tre diverse giornate presso il  parco della facoltà di Mesiano, in ciascuna delle quali si è affrontato un diverso tipo di rilievo.
 In ogni giornata si sono dapprima viste le modalità di utilizzo degli strumenti e il loro corretto stazionamento.
@@ -26,13 +27,23 @@ Il giorno 19 marzo 2019 si è svolta l'esercitazione tramite il sistema GNSS. \e
 La modalità RTK è stata eseguita appoggiandosi al servizio offerto dalla Provincia Autonoma di Trento \emph{TPOS} grazie il quale è possibile utilizzare come ricevitore una stazione fissa con noti a priori la posizione e i disturbi atmosferici, così da elaborare in tempo reale la posizione del secondo ricevitore.
 
 Il rilievo è consistito nella misura di posizione dei punti prefissati e nell'accertarsi che ci fossero abbastanza satelliti in vista da far risultare un'accuratezza dell'ordine del centimetro. 
-\textcolor{red}{Misure che sono state poi rielaborate eseguendo una rototraslazione nel capitolo \ref{cap:cap4}.}
 \section{Stazione totale}
 Il giorno 26 marzo 2019 è avvenuta l'ultima esercitazione, questa volta con l'ausilio di una stazione totale e del prisma per la misura delle distanze. 
 Sono stati usati inoltre appositi supporti per il mantenimento in verticale del prisma.
 La zona interessata è quella tra il laboratorio e il parcheggio multi-piano di Mesiano. 
 
-L'obiettivo era quello di eseguire letture zenitali e azimutali di tre punti concordati a formare un triangolo e di misurarne la distanza tra essi in andata e ritorno tramite il distanziometro. 
+L'obiettivo era quello di eseguire letture zenitali e azimutali di tre punti concordati a formare un triangolo e di misurarne la distanza tra essi in andata e ritorno tramite il distanziometro. Un disegno schematico del rilievo è riportato in figura \ref{fig:Triangolo}
+
 La messa in stazione è avvenuta in coincidenza con i tre punti e da ognuna sono stati collimati i due punti rimanenti. 
 Anche in questo caso le misure sono state effettuate da operatori diversi. 
-\textcolor{red}{Si avranno così misure ridondanti che verranno analizzate nel capitolo BOH.}
+Si avranno così misure ridondanti che verranno analizzate nel capitolo \ref{cap:cap4} tramite controlli di compatibilità e compensazione con programma Calge.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=latex]
+	\draw (0,0) -- (5,0) node[right]{$1000$};
+	\draw (5,0) -- (4,5) node[above] {$2000$};
+	\draw (4,5) -- (0,0)node[left] {$3000$};
+\end{tikzpicture}
+\caption{Disegno schematico del rilievo con indicazione dei nomi dei punti che si utilizzeranno nel capito \ref{cap:cap4}}
+\label{fig:Triangolo}
+\end{figure}
