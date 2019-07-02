@@ -253,3 +253,6 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+documents/Coord_RTS_1617.csv
+documents/livellazione.xlsx
+documents/rototraslazione.xlsx

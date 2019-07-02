@@ -29,7 +29,7 @@ AAAA , BBBB , K , misura
 \end{lstlisting}
 Dove con $I$ si intende il parametro per indicare i gradi di libertà di quel punto, con $J$ l'indice per indicare se è accettata o meno quella misura ($0 = $ OK) e con $K$ la tipologia di misura: distanza nel nostro caso.
 \section{Compensazione del rilievo del gruppo 1}
-Per eseguire i controlli di compatibilità descritti dalle \eqref{eq:somma200}, \eqref{eq:carnot} e \eqref{eq:somma0} è stato necessario adattare i dati di partenza riportati nella tabella \ref{tab:DatiInit1} rappresentante il libretto di campagna già precedentemente adattato eliminando gli errori grossolani e ordinando le misure.
+Per eseguire i controlli di compatibilità descritti dalle \eqref{eq:somma200}, \eqref{eq:carnot} e \eqref{eq:somma0} è stato necessario adattare i dati di partenza riportati nella tabella \ref{tab:DatiInit1} rappresentante il libretto di campagna già precedentemente adattato, eliminando gli errori grossolani e ordinando le misure.
 %Tabella dati iniziali gruppo1
 \begin{table}[htb]\footnotesize
 \caption{Dati di partenza ottenuti dal libretto di campagna del gruppo 1 e da cui si sono fatti i controlli di compatibilità}
@@ -78,7 +78,7 @@ Nella verifica altimetrica si sono calcolati i dislivelli delle varie misure ela
 e tenendo conto del loro verso. Sommandoli si è ottenuto un errore di chiusura di \si{-0.014}{m}.
 
 \e stata poi affrontata la compensazione vera e propria eseguita con il programma Calge.
-Per ottenere le coordinate di partenza da cui far partire il processo di iterazione di Calge, si è assegnata al punto $3000$ l'origine degli assi e si è posto l'orientamento dell'asse $x$ verso il punto $1000$, e assegnato con ascissa pari a $36$. Per le quote si è tenuto conto di un dislivello medio di 4 metri.
+Per ottenere le coordinate di partenza da cui far partire il processo di iterazione di Calge, si è assegnata al punto $3000$ l'origine degli assi e si è posto l'orientamento dell'asse $x$ verso il punto $1000$ con ascissa assegnata pari a $36$. Per le quote si è tenuto conto di un dislivello medio di 4 metri.
 All'inizio si sono utilizzate tutte le misure effettuate, che possono essere lette nell'input del programma qui di seguito. 
 \begin{lstlisting}
 1000, 4, 	36, 		0, 	4
@@ -133,7 +133,7 @@ $\mathbf{3000}$ &  0.000000  &  0.000000  & 0.000000 \\
 	{& \csvcoli & \csvcolii & \csvcoliv & \csvcolv & \csvcolvi &	\csvcolvii &\csvcolviii}
 \end{table}
 Lo stesso procedimento è stato eseguito per il gruppo 3 con i dati riportati in tabella \ref{tab:DatiInit3} a pagina \ref{tab:DatiInit3}. Si riporta sommariamente gli errori di chiusura e le coordinate dei punti.
-In generale il rilievo del gruppo 3 presenta degli errori che sono diffusi un po' a tutte le misure e pertanto non sempre si è riusciti a sistemarli eliminando quelle contenenti errori grossolani.
+In generale il rilievo del gruppo 3 presenta degli errori che sono diffusi un po' a tutte le misure e pertanto non sempre si è riusciti a sistemarli eliminando le misure contenenti errori grossolani.
 \begin{align*}
 \widehat{213} &= \si{70.79045}{^g}\\
 \widehat{123} &= \si{68.04815}{^g}\\
@@ -175,9 +175,9 @@ GRUPPO TRE
 \end{lstlisting}
 Utilizzando il qui sopra esposto libretto si ottiene un residuo elevato nella seconda misura. 
 Si è perciò eliminata la riga 6 portando ad un $\sigma_0^2$ pari a \si{2.1511}{}.
-Facendo varie prove si è notato che eliminando altre righe comportava ad avere $\sigma_0^2$ troppo bassi, pertanto si è mantenuto il risultato ottenuto avendo tolto solo la seconda misura (riga 6 dell'input)
+Facendo varie prove si è notato che eliminando altre righe comportava ad avere $\sigma_0^2$ troppo bassi, pertanto si è mantenuto il risultato ottenuto avendo tolto solo la seconda misura (riga 6 dell'input).
 
-In questo caso si sono ottenuti valori di varianze più elevate rispetto al gruppo 1 e soprattutto non errori non attribuibili ad una specifica misura.
+In questo caso si sono ottenuti valori di varianze più elevate rispetto al gruppo 1 e soprattutto con errori non attribuibili ad una specifica misura.
 Tale considerazione la si può vedere confrontando i valori delle singole coordinate. 
 
 Si ottengono pertanto le seguenti coordinate dei punti:

@@ -1,12 +1,13 @@
 \documentclass[a4paper,12pt]{report}
-\usepackage{geometry}\geometry{a4paper,top=3.5cm,bottom=3.5cm,left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
+\usepackage{geometry}\geometry{a4paper,top=3.5cm,bottom=3.5cm,%
+left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
 %ocio al bindingoffset!
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{amsmath,amsfonts,amssymb,braket}
 \usepackage{graphicx}
-%\usepackage{subfig} %sub-figures
+\usepackage{subfig} %sub-figures
 \usepackage{epsfig}
 \usepackage{plain}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
@@ -43,6 +44,8 @@ version={4.0},
 \input{titolo}   
 \tableofcontents
 \thispagestyle{empty}
+\listoftables
+\listoffigures
 % redefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
