@@ -1,7 +1,7 @@
+%!TEX root = ../Topografia_Relazione_MeoliNicola.tex
 \chapter{Fotogrammetria}
 Come ultimo esercizio si sono affrontati due progetti di fotogrammetria, consistenti nell'ottenere un'ortofoto di due aree partendo da singole strisciate di foto.
 
-Il primo di questi prevedeva 18 foto scattate da una camera posizionata in un aereo di una zona di terreno pianeggiante di circa \SI{2}{\kilo\meter} per lato, mentre il secondo consisteva in 8 foto scattate da smartphone di un plastico della dimensione di \SI{1}{\squared\meter} rappresentante una zona montuosa nei presso di Trento.
 Si illustrerà ora un accenno generale alla fotogrammetria, con l'indicazione dei passaggi effettuati tramite programma \emph{PhotoMod}. 
 Si farà poi una carrellata di immagini dei due rilievi, rappresentanti alcuni passaggi e l'ortofoto finale. 
 
@@ -30,20 +30,33 @@ Si è venuto così a creare una rappresentazione fedele dei punti dell'ambiente 
 La trasformazione di sistema di riferimento è avvenuta secondo le metodologie elencate nel capitolo \ref{cap:cap3}.
 Da questa rappresentazione digitale è infine  possibile creare ed esportare le linee di livello o un'ortofoto.
 \section{Primo esempio}
-\begin{figure}[H]
+Il primo progetto consisteva in una zona di terreno pianeggiante di circa \SI{2}{\kilo\meter} per lato.  
+Per eseguire la procedura si è partiti da 18 foto scattate da una camera posizionata in un aereo, suddivise in tre diverse strisciate.
+Particolarità di questo rilievo è che nel terreno sono stati posizionati degli elementi di facile riconoscimento.
+Grazie a questi è stato facilmente possibile assegnare le coordinate ai punti omologhi.
+
+In figura \ref{orto1} è riportato una porzione di ortofoto ottenuta dopo l'intera procedura. 
+\begin{figure}[htbp]
 \centering
 \includegraphics[trim= 3cm 3cm 3cm 3cm,clip,width=0.7\textwidth]{Img/Orto1.pdf}
 \caption{Porzione di ortofoto ottenuta dopo la procedura del primo esempio}
+\label{orto1}
 \end{figure}
+%------------------------------------
 \section{Secondo esempio} 
+Il secondo consisteva in una rappresentazione di una zona montuosa nei pressi di Trento e riportata in un plastico. 
+Plastico dalle dimensioni di \SI{1}{\meter} per lato e digitalizzato tramite 8 foto scattate da smartphone.
+Data la natura e la grandezza dell'oggetto nella realtà, in questo caso si sono dovuti fare ulteriori settaggi tali da diminuire lo scarto al millimetro o al decimo di millimetro e aumentare così la qualità finale.
+
+Nelle figure sottostanti vengono riportati gli ultimi passaggi della procedura, ovvero la creazione della TIN e della DEM, e la raffigurazione di due ortofoto a risoluzione diversa.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{Img/TIN.png}
+\includegraphics[width=0.6\textwidth,trim=1cm 2cm 1cm 1cm,clip]{Img/TIN.png}
 \caption{TIN}
 \end{figure}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{Img/DEM.png}
+\includegraphics[width=0.6\textwidth,trim=1cm 2cm 1cm 1cm,clip]{Img/DEM.png}
 \caption{DEM}
 \end{figure}
 \begin{figure}[htb]
@@ -58,3 +71,4 @@ Da questa rappresentazione digitale è infine  possibile creare ed esportare le 
 \caption{Porzioni di ortofoto ottenute dopo la procedura del primo esempio}
 \label{fig:Orto2}
 \end{figure} 
+
