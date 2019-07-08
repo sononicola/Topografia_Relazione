@@ -16,9 +16,9 @@ Con le restanti, invece, si è eseguita una compensazione con il programma Calge
 
 Si riporta di seguito la procedura appena descritta per i dati raccolti dal gruppo 1 e dal gruppo 3 delle esercitazioni. Il disegno del rilievo è riportato in figura \ref{fig:Triangolo} del capitolo \ref{cap:cap1}. Si riporterà poi un esempio di compensazione eseguito conoscendo le distanze.
 
-Obiettivo della compensazione è quello di riuscire ad ottenere risultati adeguati togliendo le misure ripetute che si rilevano troppo discostanti dalle medie, senza però ottenere valori di $\sigma_0$ inferiori all'unità, in quanto poi i risultati finali perderebbero di significato. 
+Obiettivo della compensazione è quello di riuscire ad ottenere risultati adeguati togliendo le misure ripetute che si rivelano troppo discostanti dalle medie, senza però ottenere valori di $\sigma_0$ inferiori all'unità, in quanto poi i risultati finali perderebbero di significato. 
 
-L'ordine di lettura degli input esposti qui di seguito consistono per le prime due comppensazioni in:
+L'ordine di lettura degli input esposti qui di seguito consistono per le prime due compensazioni in:
 \begin{lstlisting}
 AAAA , I , X , Y , Z  
 ......
@@ -30,7 +30,7 @@ AAAA , BBBB , K , misura
 \end{lstlisting}
 Dove con $I$ si intende il parametro per indicare i gradi di libertà di quel punto, con $J$ l'indice per indicare se è accettata o meno quella misura ($0 = $ OK) e con $K$ la tipologia di misura: distanza nel nostro caso.
 \section{Compensazione del rilievo del gruppo 1}
-Per eseguire i controlli di compatibilità descritti dalle \eqref{eq:somma200}, \eqref{eq:carnot} e \eqref{eq:somma0} è stato necessario adattare i dati di partenza riportati nella tabella \ref{tab:DatiInit1} rappresentante il libretto di campagna già precedentemente adattato, eliminando gli errori grossolani e ordinando le misure.
+Per eseguire i controlli di compatibilità descritti dalle \eqref{eq:somma200}, \eqref{eq:carnot} e \eqref{eq:somma0} è stato necessario adattare i dati di partenza e riportati in tabella \ref{tab:DatiInit1}, rappresentante il libretto di campagna già precedentemente adattato, eliminando gli errori grossolani e ordinando le misure.
 %Tabella dati iniziali gruppo1
 \begin{table}[htb]\footnotesize
 \caption{Dati di partenza ottenuti dal libretto di campagna del gruppo 1 e da cui si sono fatti i controlli di compatibilità}
@@ -45,7 +45,7 @@ Per eseguire i controlli di compatibilità descritti dalle \eqref{eq:somma200}, 
 	{& \csvcoli & \csvcolii & \csvcoliv & \csvcolv & \csvcolvi &	\csvcolvii &\csvcolviii}
 \end{table}
 
-Per prima cosa si sono calcolati gli angoli azimutali eseguendo la differenza delle letture misurate o mediate - nel caso fosse misure ripeture - ottenendo:
+Per prima cosa si sono calcolati gli angoli azimutali eseguendo la differenza delle letture misurate o mediate - nel caso fossero misure ripetute - ottenendo:
 \begin{align*}
 \widehat{213} = \si{71.38490}{^g}\\
 \widehat{123} = \si{68.64625}{^g}\\
